@@ -17,7 +17,7 @@ class apppagos(models.Model):
         if 'id' in values:
             x = requests.get('http://181.193.143.38:5050/')
             record.description = x.text
-            values['description'] += ' Create'
+            values['description'] += ' Create1'
         return super(my_module, self).create(values)
 
     def write(self, values):
