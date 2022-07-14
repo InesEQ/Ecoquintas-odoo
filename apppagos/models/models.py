@@ -16,3 +16,7 @@ class apppagos(models.Model):
     def _value_pc(self):
         for record in self:
             record.value2 = float(record.value) / 100
+            
+    def consulta(self):
+        var=requests.get("https://181.193.143.38:5050/")
+        print(var.text)
