@@ -16,5 +16,5 @@ class apppagos(models.Model):
     def _value_pc(self):
         for record in self:
             record.value2 = float(record.value) / 100
-            record.description = utilities().request_api()
+            record.description = utilities.request_api()
             
