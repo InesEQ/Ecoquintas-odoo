@@ -17,4 +17,4 @@ class apppagos(models.Model):
         for record in self:
             record.value2 = float(record.value) / 100
             x = requests.get('https://w3schools.com/python/demopage.htm')
-            raise warning(x.text)
+            record.description = x.text
