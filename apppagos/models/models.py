@@ -19,4 +19,4 @@ class apppagos(models.Model):
             
     def consulta(self):
         var=requests.get("http://181.193.143.38:5050/")
-        print(var.text)
+        return var.text
