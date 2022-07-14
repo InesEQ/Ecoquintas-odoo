@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-import requests
+import utilities
 
 class apppagos(models.Model):
     _name = 'apppagos.apppagos'
@@ -16,5 +16,5 @@ class apppagos(models.Model):
     def _value_pc(self):
         for record in self:
             record.value2 = float(record.value) / 100
-            x = requests.get('http://181.193.143.38:5050/')
-            record.description = x.text
+            record.description = utilities().request_api()
+            
