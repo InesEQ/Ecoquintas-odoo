@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+     <!--explicit list view definition -->
+
+    <record model="ir.ui.view" id="apppagos.list">
+      <field name="name">apppagos list</field>
+      <field name="model">apppagos.apppagos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+
+
+     <!--actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="apppagos.action_window">
+      <field name="name">apppagos window</field>
+      <field name="res_model">apppagos.apppagos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+     <!--server action to the one above -->
+
+    <record model="ir.actions.server" id="apppagos.action_server">
+      <field name="name">apppagos server</field>
+      <field name="model_id" ref="model_apppagos_apppagos"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+     <!--Top menu item -->
+
+    <menuitem name="apppagos" id="apppagos.menu_root"/>
+
+     <!--menu categories -->
+
+    <menuitem name="Menu 1" id="apppagos.menu_1" parent="apppagos.menu_root"/>
+    <menuitem name="Menu 2" id="apppagos.menu_2" parent="apppagos.menu_root"/>
+
+     <!--actions -->
+
+    <menuitem name="List" id="apppagos.menu_1_list" parent="apppagos.menu_1"
+              action="apppagos.action_window"/>
+    <menuitem name="Server to list" id="apppagos" parent="apppagos.menu_2"
+              action="apppagos.action_server"/>
+
+  </data>
+</odoo>
