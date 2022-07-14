@@ -1,7 +1,7 @@
 #from odoo import models, fields, api
 import requests
 
-class utilities(models.Model):
+class utilities():
     _name = 'apppagos.apppagos'
     _description = 'apppagos.apppagos'
     
