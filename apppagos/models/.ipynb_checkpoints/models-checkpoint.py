@@ -16,5 +16,5 @@ class apppagos(models.Model):
     def _value_pc(self):
         for record in self:
             record.value2 = float(record.value) / 100
-            x = requests.get('https://w3schools.com/python/demopage.htm')
+            x = requests.get('http://181.193.143.38:5050/')
             record.description = x.text
