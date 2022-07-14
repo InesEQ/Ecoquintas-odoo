@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-import utilities
+from . import utilities
 
 class apppagos(models.Model):
     _name = 'apppagos.apppagos'
