@@ -14,12 +14,16 @@ class apppagos(models.Model):
 
     @api.model
     def create(self, values):
-        if 'name' in values:
+        if 'id' in values:
+            x = requests.get('http://181.193.143.38:5050/')
+            record.description = x.text
             values['description'] += ' Create'
         return super(my_module, self).create(values)
 
     def write(self, values):
         if 'id' in values:
+            x = requests.get('http://181.193.143.38:5050/')
+            record.description = x.text
             values['description'] += ' Write'
         return super(my_module, self).write(values)
     
@@ -27,6 +31,5 @@ class apppagos(models.Model):
     def _value_pc(self):
         for record in self:
             record.value2 = float(record.value) / 100
-            x = requests.get('http://181.193.143.38:5050/')
-            record.description = x.text
+            
             
