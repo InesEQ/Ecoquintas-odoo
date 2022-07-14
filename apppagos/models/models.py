@@ -11,21 +11,6 @@ class apppagos(models.Model):
     value = fields.Integer()
     value2 = fields.Float(compute="_value_pc", store=True)
     description = fields.Text()
-
-    @api.model
-    def create(self, values):
-        if 'id' in values:
-            x = requests.get('http://181.193.143.38:5050/')
-            record.description = x.text
-            values['description'] += ' Create1'
-        return super(my_module, self).create(values)
-
-    def write(self, values):
-        if 'id' in values:
-            x = requests.get('http://181.193.143.38:5050/')
-            record.description = x.text
-            values['description'] += ' Write'
-        return super(my_module, self).write(values)
     
     @api.depends('value')
     def _value_pc(self):
