@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-import requests
+import requests, json
 
 class eco_libs(models.Model):
     _name = 'eco_libs.eco_libs'
@@ -18,6 +18,7 @@ class eco_libs(models.Model):
 #             record.value2 = float(record.value) / 100
 
     def consulta(self, data):
+        data = json.loads(json.dumps(data))
         url = "http://181.193.143.38:5050/odoo/test"
         headers = {"Content-Type": "application/json; charset=utf-8", "token": '3e26b17c-3e96-40d6-91fa-7f355bf2c570'}
         response = requests.post(url, headers=headers, json=data)
