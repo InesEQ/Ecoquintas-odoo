@@ -15,7 +15,7 @@
     </record>
 
 
-     <!--actions opening views on models
+     actions opening views on models
 
     <record model="ir.actions.act_window" id="apppagos.action_window">
       <field name="name">apppagos window</field>
@@ -24,7 +24,7 @@
     </record>
 
 
-     <!--server action to the one above 
+     server action to the one above 
 
     <record model="ir.actions.server" id="apppagos.action_server">
       <field name="name">apppagos server</field>
@@ -40,16 +40,16 @@
     </record>
 
 
-     <!--Top menu item
+     Top menu item
 
     <menuitem name="apppagos" id="apppagos.menu_root"/>
 
-     <!--menu categories 
+     menu categories 
 
     <menuitem name="Menu 1" id="apppagos.menu_1" parent="apppagos.menu_root"/>
     <menuitem name="Menu 2" id="apppagos.menu_2" parent="apppagos.menu_root"/>
 
-     <!--actions 
+     actions 
 
     <menuitem name="List" id="apppagos.menu_1_list" parent="apppagos.menu_1"
               action="apppagos.action_window"/>
