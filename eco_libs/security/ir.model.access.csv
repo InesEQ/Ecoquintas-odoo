@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_eco_libs_eco_libs,eco_libs.eco_libs,model_eco_libs_eco_libs,base.group_user,1,1,1,1
