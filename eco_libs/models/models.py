@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+import requests
 
 class eco_libs(models.Model):
     _name = 'eco_libs.eco_libs'
