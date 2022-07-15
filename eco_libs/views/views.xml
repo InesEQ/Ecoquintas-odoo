@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="eco_libs.list">
+      <field name="name">eco_libs list</field>
+      <field name="model">eco_libs.eco_libs</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="eco_libs.action_window">
+      <field name="name">eco_libs window</field>
+      <field name="res_model">eco_libs.eco_libs</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="eco_libs.action_server">
+      <field name="name">eco_libs server</field>
+      <field name="model_id" ref="model_eco_libs_eco_libs"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="eco_libs" id="eco_libs.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="eco_libs.menu_1" parent="eco_libs.menu_root"/>
+    <menuitem name="Menu 2" id="eco_libs.menu_2" parent="eco_libs.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="eco_libs.menu_1_list" parent="eco_libs.menu_1"
+              action="eco_libs.action_window"/>
+    <menuitem name="Server to list" id="eco_libs" parent="eco_libs.menu_2"
+              action="eco_libs.action_server"/>
+-->
+  </data>
+</odoo>
